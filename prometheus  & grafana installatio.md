@@ -206,6 +206,17 @@ WantedBy=multi-user.target</code></pre>
 sudo systemctl start alertmanager
 sudo systemctl enable alertmanager</code></pre>
 
+### 9. Configure Prometheus to Use Alertmanager
+Edit /etc/prometheus/prometheus.yml:
+
+``` yaml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - 'localhost:9093'
+```
   <p>Access Alertmanager: <strong>http://&lt;EC2_PUBLIC_IP&gt;:9093</strong></p>
 
   <h2>4️⃣ Grafana Installation</h2>
