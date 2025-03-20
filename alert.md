@@ -1,8 +1,8 @@
-7. Set Up Alerts in Prometheus
+###7. Set Up Alerts in Prometheus
 a) Add Rule to Prometheus Alert Rules
 Create file /etc/prometheus/alert.rules.yml
 
-groups:
+```groups:
 - name: resource-alerts
   rules:
   - alert: HighCPUUsage
@@ -22,3 +22,4 @@ groups:
     annotations:
       summary: "High Memory usage on {{ $labels.instance }}"
       description: "Memory usage is above 80% for more than 2 minutes."
+```
