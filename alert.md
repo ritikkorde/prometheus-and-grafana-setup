@@ -1,4 +1,4 @@
-###7. Set Up Alerts in Prometheus
+### 7. Set Up Alerts in Prometheus
 a) Add Rule to Prometheus Alert Rules
 Create file /etc/prometheus/alert.rules.yml
 
@@ -23,3 +23,13 @@ Create file /etc/prometheus/alert.rules.yml
       summary: "High Memory usage on {{ $labels.instance }}"
       description: "Memory usage is above 80% for more than 2 minutes."
 ```
+
+### b) Reference Rules in Prometheus Config /etc/prometheus/prometheus.yml
+ 
+``` yaml
+rule_files:
+  - "alert.rules.yml"
+```
+### c) Restart Prometheus
+
+## sudo systemctl restart prometheus
